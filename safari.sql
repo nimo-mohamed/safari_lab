@@ -51,5 +51,13 @@ INSERT INTO staffs (name, employeeNumber) VALUES ('Captain james', 12123);
 INSERT INTO assignments (employeeId, enclosureId, day) VALUES (1, 1, 'Tuesday');
 INSERT INTO assignments (employeeId, enclosureId, day) VALUES (2, 2, 'Wednesday');
 INSERT INTO assignments (employeeId, enclosureId, day) VALUES (3, 3, 'Thursday');
-INSERT INTO assignments (employeeId, enclosureId, day) VALUES (4, 4, 'Friday');
+INSERT INTO assignments (employeeId, enclosureId, day) VALUES (4, 1, 'Friday');
+
+-- SELECT animals.name, enclosure_id FROM animals LEFT JOIN enclosures ON enclosures.id = animals.enclosure_id;
+
+SELECT staffs.name, assignments.enclosureId FROM assignments 
+LEFT JOIN staffs 
+ON staffs.id = assignments.employeeId 
+LEFT JOIN enclosures 
+ON enclosures.id = assignments.enclosureId WHERE assignments.enclosureId  = 1;
 
